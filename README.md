@@ -4,6 +4,69 @@
 ###1.升级mac自带vim
 `brew install vim`
 ###2.安装必要的插件
+#### 2.1 插件管理 [Vundle.vim](https://github.com/VundleVim/Vundle.vim)
+The plug-in manager for Vim.
+
+```
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+创建并编辑`.vimrc`
+
+```
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+"............................................................
+"my Bundle here:
+"
+">>>>>>>>>>>>>>>>>>>>>>>>
+"original repos on github
+"
+"Bundle 'kien/ctrlp.vim'
+">>>>>>>>>>>>>>>>>>>>>>>>
+"vimscripts repos
+"
+"Bundle 'YankRing.vim'
+">>>>>>>>>>>>>>>>>>>>>>>>
+"non gihut repos
+"
+"Bundle 'git://git.wincent.com/command-t.git'
+
+"............................................................
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line                                                                      
+```
+打开vim，运行`:BundleInstall`
+
+另：其他常用命令
+
+- 更新插件`:BundleUpdate`
+- 清除不再使用的插件`:BundleClean`
+- 列出所有插件`:BundleList`
+- 查找插件`:BundleSearch`
+
+#### 2.2 其他插件
+- [nerdtree](https://github.com/scrooloose/nerdtree): A tree explorer plugin for vim.
 
 
 ## Atom
@@ -35,7 +98,7 @@ $ npm install --save PACKAGE_NAME
 - [express](https://github.com/expressjs/express): Fast, unopinionated, minimalist web framework for node.
 - [utility](https://github.com/node-modules/utility): A collection of useful utilities.
 - [superagent](https://github.com/visionmedia/superagent): A small progressive client-side HTTP request library, and Node.js module with the same API, sporting many high-level HTTP client features.
-- [cheeriojs](https://github.com/cheeriojs/cheerio):Fast, flexible, and lean implementation of core jQuery designed specifically for the server. 
+- [cheerio](https://github.com/cheeriojs/cheerio):Fast, flexible, and lean implementation of core jQuery designed specifically for the server. 
 
 ## 报错总结
 #### 1.`Error: listen EADDRINUSE`错误：
