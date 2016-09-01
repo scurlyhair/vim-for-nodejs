@@ -127,17 +127,9 @@ syntax on
 " 使用F2快速调用和隐藏
 map <F2> :NERDTreeToggle<CR> 
 
-" ......syntastic......
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 ```
+
+其他配置参见[我的.vimrc](.vimrc)
 
 ### 4.常用命令
 基本操作
