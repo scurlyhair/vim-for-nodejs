@@ -4,6 +4,7 @@
 ## Vim
 ###1.升级mac自带vim
 `brew install vim`
+重启Terminal之后，vim会更新。
 ###2.安装必要的插件
 #### 2.1 插件管理 [Vundle.vim](https://github.com/VundleVim/Vundle.vim)
 The plug-in manager for Vim.
@@ -11,7 +12,7 @@ The plug-in manager for Vim.
 ```
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-创建并编辑`.vimrc`
+创建并编辑`.vimrc`,如下:
 
 ```
 set nocompatible              " be iMproved, required
@@ -86,8 +87,10 @@ Syntax checking hacks for vim
 Vastly improved Javascript indentation and syntax support in Vim.
 
 **---Colorschemes---**
-####2.2.6 [altercation](https://github.com/altercation/vim-colors-solarized)
+#####2.2.6 [altercation](https://github.com/altercation/vim-colors-solarized)
 precision colorscheme for the vim text editor
+#####2.2.7 [dracula](https://draculatheme.com/vim/)
+wonderful theme for everything.
 
 
 
