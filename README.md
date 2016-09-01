@@ -85,17 +85,24 @@ JSHint is a tool that helps to detect errors and potential problems in your Java
 Syntax checking hacks for vim
 #####2.2.5 [vim-javascript](https://github.com/pangloss/vim-javascript)
 Vastly improved Javascript indentation and syntax support in Vim.
+#####2.2.6 [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+A code-completion engine for Vim.自动补全
 
 **---Colorschemes---**
 #####2.2.6 [altercation](https://github.com/altercation/vim-colors-solarized)
 precision colorscheme for the vim text editor
 #####2.2.7 [dracula](https://draculatheme.com/vim/)
 wonderful theme for everything.
+#####2.2.8 [vim-airline](https://github.com/vim-airline/vim-airline)
+lean & mean status/tabline for vim that's light as air.加强版状态条。
 
 
+**---Browsin---**
 
-#####2.2.4 [NERDTree](https://github.com/scrooloose/nerdtree)
+#####2.2.8 [NERDTree](https://github.com/scrooloose/nerdtree)
 A tree explorer plugin for vim.可以查看当前工作目录和子目录的tree结构。
+#####2.2.9 [ctrlp](https://github.com/kien/ctrlp.vim)
+Fuzzy file, buffer, mru, tag, etc finder.文件搜索利器。
 
 使用`:NERDTree`命令激活NERDTree。 最好是设定快捷键。
 
@@ -116,6 +123,16 @@ vim插件配置好之后。在`.vimrc`文件的最下面开始进行我们的自
 " 语法高亮
 syntax enable
 syntax on
+
+"行号                                                                               
+set number                                                                          
+"set nonumber 
+
+" 在处理未保存或只读文件的时候，弹出确认 
+set confirm 
+
+" 使回格键（backspace）正常处理indent, eol, start等 
+set backspace=2 
 
 ```
 ---
