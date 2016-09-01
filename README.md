@@ -1,4 +1,5 @@
 #Note-for-node-js
+（菜鸟学习笔记，持续更新......）
 
 ## Vim
 ###1.升级mac自带vim
@@ -66,8 +67,123 @@ filetype plugin indent on    " required
 - 查找插件`:BundleSearch`
 
 #### 2.2 其他插件
-- [nerdtree](https://github.com/scrooloose/nerdtree): A tree explorer plugin for vim.
+参考：[GitHub上的Vim Plugins](https://github.com/nodejs/node/wiki/Vim-Plugins)
 
+**---General---**
+#####2.2.1 [vim-node](https://github.com/moll/vim-node)
+Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node.
+
+**---Linter---**
+#####2.2.2 [Tabular](https://github.com/godlygeek/tabular)
+Vim script for text filtering and alignment.
+#####2.2.3 [jshint](https://github.com/jshint/jshint)
+JSHint is a tool that helps to detect errors and potential problems in your JavaScript code.
+
+**---Syntax---**
+#####2.2.4 [vim-javascript](https://github.com/pangloss/vim-javascript)
+Vastly improved Javascript indentation and syntax support in Vim.
+#####2.2.4 [NERDTree](https://github.com/scrooloose/nerdtree)
+A tree explorer plugin for vim.可以查看当前工作目录和子目录的tree结构。
+
+使用`:NERDTree`命令激活NERDTree。 最好是设定快捷键。
+
+
+### 3. 配置
+革命尚未成功，同志仍需努力。DIY一个属于自己的风格的vim.
+
+vim的配置主要是基于`~/.vimrc`文件。所以了解vimrc文件的配置信息是必要的，至少知道每个命令是干什么用的。
+
+这里有一篇好文推荐看看，总结的非常棒！[Vim配置详解](http://www.cnblogs.com/witcxc/archive/2011/12/28/2304704.html)
+
+vim插件配置好之后。在`.vimrc`文件的最下面开始进行我们的自定义配置。(当然你也可以直接进行自定义配置)
+
+一般配置
+
+```
+" 语法高亮
+syntax enable
+syntax on
+
+```
+---
+ 
+插件配置
+
+```
+" ........ NERDTree Config........
+" 使用F2快速调用和隐藏
+map <F2> :NERDTreeToggle<CR> 
+
+```
+
+### 4.常用命令
+基本操作
+
+```
+
+```
+
+NERDTree 操作:
+
+```
+ctrl + w + h    光标 focus 左侧树形目录
+ctrl + w + l    光标 focus 右侧文件显示窗口
+ctrl + w + w    光标自动在左右侧窗口切换 #！！！
+ctrl + w + r    移动当前窗口的布局位置
+
+o       在已有窗口中打开文件、目录或书签，并跳到该窗口
+go      在已有窗口 中打开文件、目录或书签，但不跳到该窗口
+t       在新 Tab 中打开选中文件/书签，并跳到新 Tab
+T       在新 Tab 中打开选中文件/书签，但不跳到新 Tab
+i       split 一个新窗口打开选中文件，并跳到该窗口
+gi      split 一个新窗口打开选中文件，但不跳到该窗口
+s       vsplit 一个新窗口打开选中文件，并跳到该窗口
+gs      vsplit 一个新 窗口打开选中文件，但不跳到该窗口
+!       执行当前文件
+O       递归打开选中 结点下的所有目录
+x       合拢选中结点的父目录
+X       递归 合拢选中结点下的所有目录
+e       Edit the current dif
+
+双击    相当于 NERDTree-o
+中键    对文件相当于 NERDTree-i，对目录相当于 NERDTree-e
+
+D       删除当前书签
+
+P       跳到根结点
+p       跳到父结点
+K       跳到当前目录下同级的第一个结点
+J       跳到当前目录下同级的最后一个结点
+k       跳到当前目录下同级的前一个结点
+j       跳到当前目录下同级的后一个结点
+
+C       将选中目录或选中文件的父目录设为根结点
+u       将当前根结点的父目录设为根目录，并变成合拢原根结点
+U       将当前根结点的父目录设为根目录，但保持展开原根结点
+r       递归刷新选中目录
+R       递归刷新根结点
+m       显示文件系统菜单 #！！！然后根据提示进行文件的操作如新建，重命名等
+cd      将 CWD 设为选中目录
+
+I       切换是否显示隐藏文件
+f       切换是否使用文件过滤器
+F       切换是否显示文件
+B       切换是否显示书签
+
+q       关闭 NerdTree 窗口
+?       切换是否显示 Quick Help
+
+:tabnew [++opt选项] ［＋cmd］ 文件      建立对指定文件新的tab
+:tabc   关闭当前的 tab
+:tabo   关闭所有其他的 tab
+:tabs   查看所有打开的 tab
+:tabp   前一个 tab
+:tabn   后一个 tab
+
+标准模式下：
+gT      前一个 tab
+gt      后一个 tab
+```
 
 ## Atom
 ### 插件
@@ -99,6 +215,7 @@ $ npm install --save PACKAGE_NAME
 - [utility](https://github.com/node-modules/utility): A collection of useful utilities.
 - [superagent](https://github.com/visionmedia/superagent): A small progressive client-side HTTP request library, and Node.js module with the same API, sporting many high-level HTTP client features.
 - [cheerio](https://github.com/cheeriojs/cheerio):Fast, flexible, and lean implementation of core jQuery designed specifically for the server. 
+
 
 ## 报错总结
 #### 1.`Error: listen EADDRINUSE`错误：
