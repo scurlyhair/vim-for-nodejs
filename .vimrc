@@ -20,6 +20,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'dracula/vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'vim-airline/vim-airline'
+Bundle 'Valloric/YouCompleteMe'
 ">>>>>>>>>>>>>>>>>>>>>>>>
 "vimscripts repos
 "
@@ -56,6 +58,20 @@ filetype plugin indent on    " required
 " syntax enable
 syntax on
 "
+"行号
+set number
+"set nonumber
+"
+" 在处理未保存或只读文件的时候，弹出确认 
+set confirm 
+"
+" 不要使用vi的键盘模式，而是vim自己的 
+" set nocompatible
+"
+"
+"
+" 使回格键（backspace）正常处理indent, eol, start等 
+set backspace=2 
 "
 " ........ NERDTree ........
 " 使用F2快速调用和隐藏
