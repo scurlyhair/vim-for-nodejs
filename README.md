@@ -88,20 +88,80 @@ Vastly improved Javascript indentation and syntax support in Vim.
 #####2.2.6 [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 A code-completion engine for Vim.自动补全
 
+步骤：
+
+1.Install `YouCompleteMe`
+
+2.NOTE: If you want C-family completion, you MUST have the latest Xcode installed along with the latest Command Line Tools (they are installed automatically when you run `clang` for the first time, or manually by running `xcode-select --install`)
+
+3.Install CMake with`brew install cmake`
+
+4.Compiling YCM with semantic support for C-family languages:
+
+```
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
+```
+*4*.Compiling YCM without semantic support for C-family languages:
+
+```
+cd ~/.vim/bundle/YouCompleteMe
+./install.py
+```
+5.Install `tern_for_vim`
+
+6.For node.js run:
+
+```
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --tern-completer
+```
+
+7.put a `.tern-project` file in your project directory. It is very finicky, so make sure the syntax is correct. For example, if you try to load a file in tern that is not in the project, autocompletion will not work.
+[More Information](http://ternjs.net/doc/manual.html#configuration)
+
+eg.
+```
+{
+  "libs": [
+    "browser",
+    "jquery"
+  ],
+  "loadEagerly": [
+    "importantfile.js"
+  ],
+  "plugins": {
+    "requirejs": {
+      "baseURL": "./",
+      "paths": {}
+    }
+  }
+}
+```
+8.No 8! It's done. It was painful for getting it ready youself ,hah?
+
+**There is stil something you have to pay attention to:**
+
+For me, it display`YouCompleteMe unavailable: requires Vim 7.3.598+`when I use`vi [myfile]`to edit some file.
+And [this issue](https://github.com/Valloric/YouCompleteMe/issues/549) can fix it with`alias vi='vim'`.
+
+#####2.2.7 [flow](https://github.com/facebook/flow)
+Adds static typing to JavaScript to improve developer productivity and code quality. 
+
 **---Colorschemes---**
-#####2.2.6 [altercation](https://github.com/altercation/vim-colors-solarized)
+#####2.2.8 [altercation](https://github.com/altercation/vim-colors-solarized)
 precision colorscheme for the vim text editor
-#####2.2.7 [dracula](https://draculatheme.com/vim/)
+#####2.2.9 [dracula](https://draculatheme.com/vim/)
 wonderful theme for everything.
-#####2.2.8 [vim-airline](https://github.com/vim-airline/vim-airline)
+#####2.2.10 [vim-airline](https://github.com/vim-airline/vim-airline)
 lean & mean status/tabline for vim that's light as air.加强版状态条。
 
 
 **---Browsin---**
 
-#####2.2.8 [NERDTree](https://github.com/scrooloose/nerdtree)
+#####2.2.11 [NERDTree](https://github.com/scrooloose/nerdtree)
 A tree explorer plugin for vim.可以查看当前工作目录和子目录的tree结构。
-#####2.2.9 [ctrlp](https://github.com/kien/ctrlp.vim)
+#####2.2.12 [ctrlp](https://github.com/kien/ctrlp.vim)
 Fuzzy file, buffer, mru, tag, etc finder.文件搜索利器。
 
 使用`:NERDTree`命令激活NERDTree。 最好是设定快捷键。
@@ -460,7 +520,7 @@ node    3742 wuyunhui   12u  IPv6 0xe120a4e962ac90b5      0t0  TCP *:hbci (LISTE
 然后杀死该进程：
 `kill -9 3742`
 
-根据stackoverflow上面的答案最好是在`kill -9`之前先 `kill -15`，原因：
+根据stackoverflow上面的答案最好是在`kill -9`之前先run: `kill -15`，the reason is：
 
 Generally, you should use kill -15 before kill -9 to give the target process a chance to clean up after itself. (Processes can't catch or ignore SIGKILL, but they can and often do catch SIGTERM.) If you don't give the process a chance to finish what it's doing and clean up, it may leave corrupted files (or other state) around that it won't be able to understand once restarted.
 [Nobita的回答](http://stackoverflow.com/questions/9898372/nodejs-error-listen-eaddrinuse)

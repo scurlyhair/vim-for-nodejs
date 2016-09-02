@@ -22,6 +22,7 @@ Bundle 'dracula/vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-airline/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'ternjs/tern_for_vim'
 ">>>>>>>>>>>>>>>>>>>>>>>>
 "vimscripts repos
 "
@@ -53,6 +54,21 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+" 侦测文件类型 
+filetype on 
+"
+" 载入文件类型插件 
+filetype plugin on 
+"
+" 为特定文件类型载入相关缩进文件 
+filetype indent on 
+"
+" " 保存全局变量 
+" set viminfo+=! 
+"
+" 带有如下符号的单词不要被换行分割 
+set iskeyword+=_,$,@,%,#,- 
 "
 " 语法高亮
 " syntax enable
