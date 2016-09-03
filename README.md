@@ -1,18 +1,19 @@
 #Note-for-node-js
-（菜鸟学习笔记，持续更新......）
+（node.js菜鸟学习笔记，持续更新......后期添加索引）
 
 ## Vim
-###1.升级mac自带vim
+Make Vim a node.js IDE step by step.(将Vim打造为轻便好用的node.js开发环境)。
+###1.Install `Vim`
 `brew install vim`
-重启Terminal之后，vim会更新。
-###2.安装必要的插件
-#### 2.1 插件管理 [Vundle.vim](https://github.com/VundleVim/Vundle.vim)
+Restart the terminal and when you run `vi [profile]` or `vim` it will open the vim you installed.
+###2.The Plugin
+#### 2.1 Plugin Manager [Vundle.vim](https://github.com/VundleVim/Vundle.vim)
 The plug-in manager for Vim.
 
 ```
 $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-创建并编辑`.vimrc`,如下:
+Edit the`.vimrc`,like this(if there is no `.vimrc` profile in your home path just create it yourself `touch .vimrc`):
 
 ```
 set nocompatible              " be iMproved, required
@@ -58,17 +59,17 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line                                                                      
 ```
-打开vim，运行`:BundleInstall`
+Open `vim` and run:`:BundleInstall`
 
-另：其他常用命令
+More：SomeCommand
 
-- 更新插件`:BundleUpdate`
-- 清除不再使用的插件`:BundleClean`
-- 列出所有插件`:BundleList`
-- 查找插件`:BundleSearch`
+- `:BundleUpdate`
+- `:BundleClean`
+- `:BundleList`
+- `:BundleSearch`
 
-#### 2.2 其他插件
-参考：[GitHub上的Vim Plugins](https://github.com/nodejs/node/wiki/Vim-Plugins)
+#### 2.2 Plugins
+You'd better to have a look at [Vim Plugins](https://github.com/nodejs/node/wiki/Vim-Plugins)
 
 **---General---**
 #####2.2.1 [vim-node](https://github.com/moll/vim-node)
@@ -86,9 +87,9 @@ Syntax checking hacks for vim
 #####2.2.5 [vim-javascript](https://github.com/pangloss/vim-javascript)
 Vastly improved Javascript indentation and syntax support in Vim.
 #####2.2.6 [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
-A code-completion engine for Vim.自动补全
+A code-completion engine for Vim.
 
-步骤：
+Step：
 
 1.Install `YouCompleteMe`
 
@@ -121,29 +122,39 @@ cd ~/.vim/bundle/YouCompleteMe
 [More Information](http://ternjs.net/doc/manual.html#configuration)
 
 eg.
+
 ```
 {
   "libs": [
-    "browser",
-    "jquery"
+    "express"
+    //"browser",
+    //"jquery"
   ],
   "loadEagerly": [
-    "importantfile.js"
+    //"importantfile.js"
   ],
   "plugins": {
     "requirejs": {
-      "baseURL": "./",
-      "paths": {}
+      //"baseURL": "./",
+      //"paths": {}
     }
   }
 }
 ```
+
 8.No 8! It's done. It was painful for getting it ready youself ,hah?
 
-**There is stil something you have to pay attention to:**
+**There are stil somethings you should pay attention to:**
 
-For me, it display`YouCompleteMe unavailable: requires Vim 7.3.598+`when I use`vi [myfile]`to edit some file.
-And [this issue](https://github.com/Valloric/YouCompleteMe/issues/549) can fix it with`alias vi='vim'`.
+- For me, it display`YouCompleteMe unavailable: requires Vim 7.3.598+` when I use`vi [myfile]`to edit some file.
+And [this issue](https://github.com/Valloric/YouCompleteMe/issues/549) can fix it with`alias vi='vim'`.But it happens when restart the terminal the my way to fix it is add `alias vi='vim'` to my `~/.bashrc`.
+- Sometimes you may got the error display just like:`can't find module vim/bundle/tern_for_vim/node_modules/tern/bin/tern'`.To solve this problem, run:
+
+- ```
+cd ~/.vim/bundle/tern_for_vim/
+npm install tern
+```
+
 
 #####2.2.7 [flow](https://github.com/facebook/flow)
 Adds static typing to JavaScript to improve developer productivity and code quality. 
@@ -152,63 +163,28 @@ Adds static typing to JavaScript to improve developer productivity and code qual
 #####2.2.8 [altercation](https://github.com/altercation/vim-colors-solarized)
 precision colorscheme for the vim text editor
 #####2.2.9 [dracula](https://draculatheme.com/vim/)
-wonderful theme for everything.
+wonderful theme for everything. By the way: 这个主题，真TM不错。每次打开Vim心情瞬间美美哒！O(∩_∩)O哈哈~ 虽然据说是暗黑系风格。 You like it?
 #####2.2.10 [vim-airline](https://github.com/vim-airline/vim-airline)
-lean & mean status/tabline for vim that's light as air.加强版状态条。
+lean & mean status/tabline for vim that's light as air.
 
 
 **---Browsin---**
 
 #####2.2.11 [NERDTree](https://github.com/scrooloose/nerdtree)
-A tree explorer plugin for vim.可以查看当前工作目录和子目录的tree结构。
+A tree explorer plugin for vim.
 #####2.2.12 [ctrlp](https://github.com/kien/ctrlp.vim)
-Fuzzy file, buffer, mru, tag, etc finder.文件搜索利器。
-
-使用`:NERDTree`命令激活NERDTree。 最好是设定快捷键。
+Fuzzy file, buffer, mru, tag, etc finder.
 
 
 
-### 3. 配置
-革命尚未成功，同志仍需努力。DIY一个属于自己的风格的vim.
+### 3. Config
 
-vim的配置主要是基于`~/.vimrc`文件。所以了解vimrc文件的配置信息是必要的，至少知道每个命令是干什么用的。
+The `~/.vimrc` profile control almost everything of vim, so you need to pay some of your time to know about it.
 
-这里有一篇好文推荐看看，总结的非常棒！[Vim配置详解](http://www.cnblogs.com/witcxc/archive/2011/12/28/2304704.html)
+You can see my `.vimrc` as a sample [here](.vimrc). For I am a very very newer!
 
-vim插件配置好之后。在`.vimrc`文件的最下面开始进行我们的自定义配置。(当然你也可以直接进行自定义配置)
 
-一般配置
-
-```
-" 语法高亮
-syntax enable
-syntax on
-
-"行号                                                                               
-set number                                                                          
-"set nonumber 
-
-" 在处理未保存或只读文件的时候，弹出确认 
-set confirm 
-
-" 使回格键（backspace）正常处理indent, eol, start等 
-set backspace=2 
-
-```
----
- 
-插件配置
-
-```
-" ........ NERDTree Config........
-" 使用F2快速调用和隐藏
-map <F2> :NERDTreeToggle<CR> 
-
-```
-
-其他配置参见[我的.vimrc](.vimrc)
-
-### 4.常用命令
+### 4.附：常用命令
 基本操作
 
 ```
@@ -499,7 +475,7 @@ $ npm init//工程初始化
 $ npm install --save PACKAGE_NAME
 ```
 
-## 库总结
+## Libraries
 - [npm](https://github.com/npm/npm): A package manager for javascript.
 - [express](https://github.com/expressjs/express): Fast, unopinionated, minimalist web framework for node.
 - [utility](https://github.com/node-modules/utility): A collection of useful utilities.
@@ -507,8 +483,8 @@ $ npm install --save PACKAGE_NAME
 - [cheerio](https://github.com/cheeriojs/cheerio):Fast, flexible, and lean implementation of core jQuery designed specifically for the server. 
 
 
-## 报错总结
-#### 1.`Error: listen EADDRINUSE`错误：
+## Errors
+#### 1.`Error: listen EADDRINUSE`：
 `listen()`方法尝试绑定已经被使用的服务器端口。
 
 **解决方案**：终端输入`lsof -i tcp:8888`(8888为端口号)获取在该端口运行的进程id（PID）。输出:
