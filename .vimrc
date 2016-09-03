@@ -23,6 +23,10 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'vim-airline/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'ternjs/tern_for_vim'
+Bundle 'moll/vim-node'
+Bundle 'pangloss/vim-javascript'
+Bundle 'walm/jshint.vim'
+Bundle 'Shutnik/jshint2.vim'
 ">>>>>>>>>>>>>>>>>>>>>>>>
 "vimscripts repos
 "
@@ -55,21 +59,6 @@ filetype plugin indent on    " required
 " Config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-" 侦测文件类型 
-filetype on 
-"
-" 载入文件类型插件 
-filetype plugin on 
-"
-" 为特定文件类型载入相关缩进文件 
-filetype indent on 
-"
-" " 保存全局变量 
-" set viminfo+=! 
-"
-" 带有如下符号的单词不要被换行分割 
-set iskeyword+=_,$,@,%,#,- 
-"
 " 语法高亮
 " syntax enable
 syntax on
@@ -88,6 +77,13 @@ set confirm
 "
 " 使回格键（backspace）正常处理indent, eol, start等 
 set backspace=2 
+"
+" 缩进
+set ts=2
+set sw=2
+set smartindent
+"
+"
 "
 " ........ NERDTree ........
 " 使用F2快速调用和隐藏
@@ -112,4 +108,17 @@ color dracula
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 "
+" ...... vim-javascript ......
+let javascript_enable_domhtmlcss = 1
 "
+"
+" ...... jshint2.vim ......
+let jshint2_command = '/usr/local/lib/node_modules/.bin/jshint'
+let jshint2_read = 1
+let jshint2_save = 1
+let jshint2_close = 0
+let jshint2_confirm = 0
+"
+"
+"
+

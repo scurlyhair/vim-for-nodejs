@@ -78,9 +78,12 @@ Tools and environment to make Vim superb for developing with Node.js. Like Rails
 **---Linter---**
 #####2.2.2 [Tabular](https://github.com/godlygeek/tabular)
 Vim script for text filtering and alignment.
-#####2.2.3 [jshint](https://github.com/jshint/jshint)
+#####2.2.3 [jshint.vim](https://github.com/jshint/jshint)
 JSHint is a tool that helps to detect errors and potential problems in your JavaScript code.
-
+run`sudo install -g jshint` for global installration of jshint
+install `jshint.vim` with Vundle
+install `jshint2.vim` with Vundle	
+#####2.2.4 [jshint2](https://github.com/Shutnik/jshint2.vim)
 **---Syntax---**
 #####2.2.4 [syntastic](https://github.com/scrooloose/syntastic)
 Syntax checking hacks for vim
@@ -163,7 +166,7 @@ Adds static typing to JavaScript to improve developer productivity and code qual
 #####2.2.8 [altercation](https://github.com/altercation/vim-colors-solarized)
 precision colorscheme for the vim text editor
 #####2.2.9 [dracula](https://draculatheme.com/vim/)
-wonderful theme for everything. By the way: 这个主题，真TM不错。每次打开Vim心情瞬间美美哒！O(∩_∩)O哈哈~ 虽然据说是暗黑系风格。 You like it?
+wonderful theme for everything. By the way: 这个系列的主题，真TM不错。每次打开Vim心情瞬间美美哒！O(∩_∩)O哈哈~ 虽然据说是暗黑系风格。 You like it?
 #####2.2.10 [vim-airline](https://github.com/vim-airline/vim-airline)
 lean & mean status/tabline for vim that's light as air.
 
@@ -186,6 +189,7 @@ You can see my `.vimrc` as a sample [here](.vimrc). For I am a very very newer!
 
 ### 4.附：常用命令
 基本操作
+
 
 ```
 光标移动指令
@@ -389,7 +393,9 @@ You can see my `.vimrc` as a sample [here](.vimrc). For I am a very very newer!
 8. :sp 另外开一个窗口来编辑档案
 ```
 
+
 NERDTree 操作:
+
 
 ```
 ctrl + w + h    光标 focus 左侧树形目录
@@ -449,6 +455,12 @@ q       关闭 NerdTree 窗口
 标准模式下：
 gT      前一个 tab
 gt      后一个 tab
+```
+
+一些常用操作：
+
+```
+gg=G //format your code
 ```
 
 ## Atom
