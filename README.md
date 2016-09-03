@@ -153,12 +153,10 @@ eg.
 And [this issue](https://github.com/Valloric/YouCompleteMe/issues/549) can fix it with`alias vi='vim'`.But it happens when restart the terminal the my way to fix it is add `alias vi='vim'` to my `~/.bashrc`.
 - Sometimes you may got the error display just like:`can't find module vim/bundle/tern_for_vim/node_modules/tern/bin/tern'`.To solve this problem, run:
 
-- ```
+```
 cd ~/.vim/bundle/tern_for_vim/
 npm install tern
 ```
-
-
 #####2.2.7 [flow](https://github.com/facebook/flow)
 Adds static typing to JavaScript to improve developer productivity and code quality. 
 
