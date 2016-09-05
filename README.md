@@ -69,6 +69,30 @@ More：SomeCommand
 - `:BundleSearch`
 
 #### 2.2 Plugins
+myPlugin:
+
+```
+jshint.vim
+jshint2.vim
+npm install jshint
+
+syntastic
+
+vim-javascript
+
+YouCompleteMe
+npm install -g tern
+//you can touch ~/.tern-config to make a global config
+
+dracula
+
+vim-airline
+
+NERDTree
+
+ctrlp
+```
+
 You'd better to have a look at [Vim Plugins](https://github.com/nodejs/node/wiki/Vim-Plugins)
 
 **---General---**
@@ -80,7 +104,7 @@ Tools and environment to make Vim superb for developing with Node.js. Like Rails
 Vim script for text filtering and alignment.
 #####2.2.3 [jshint.vim](https://github.com/jshint/jshint)
 JSHint is a tool that helps to detect errors and potential problems in your JavaScript code.
-run`sudo install -g jshint` for global installration of jshint
+run`sudo npm install -g jshint` for global installration of jshint
 install `jshint.vim` with Vundle
 install `jshint2.vim` with Vundle	
 #####2.2.4 [jshint2](https://github.com/Shutnik/jshint2.vim)
@@ -160,20 +184,29 @@ npm install tern
 #####2.2.7 [flow](https://github.com/facebook/flow)
 Adds static typing to JavaScript to improve developer productivity and code quality. 
 
+#####2.2.8 [vim-indent-guide](https://github.com/nathanaelkane/vim-indent-guides)
+A Vim plugin for visually displaying indent levels in code.
+
+#####2.2.9 [delimitMate](https://github.com/Raimondi/delimitMate)
+Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc. 
+#####2.2.10 [rainbow_parentheeses.vim](https://github.com/kien/rainbow_parentheses.vim)
+Better Rainbow Parentheses.
+
+
 **---Colorschemes---**
-#####2.2.8 [altercation](https://github.com/altercation/vim-colors-solarized)
+#####2.2.10 [altercation](https://github.com/altercation/vim-colors-solarized)
 precision colorscheme for the vim text editor
-#####2.2.9 [dracula](https://draculatheme.com/vim/)
+#####2.2.11 [dracula](https://draculatheme.com/vim/)
 wonderful theme for everything. By the way: 这个系列的主题，真TM不错。每次打开Vim心情瞬间美美哒！O(∩_∩)O哈哈~ 虽然据说是暗黑系风格。 You like it?
-#####2.2.10 [vim-airline](https://github.com/vim-airline/vim-airline)
+#####2.2.12 [vim-airline](https://github.com/vim-airline/vim-airline)
 lean & mean status/tabline for vim that's light as air.
 
 
 **---Browsin---**
 
-#####2.2.11 [NERDTree](https://github.com/scrooloose/nerdtree)
+#####2.2.13 [NERDTree](https://github.com/scrooloose/nerdtree)
 A tree explorer plugin for vim.
-#####2.2.12 [ctrlp](https://github.com/kien/ctrlp.vim)
+#####2.2.14 [ctrlp](https://github.com/kien/ctrlp.vim)
 Fuzzy file, buffer, mru, tag, etc finder.
 
 

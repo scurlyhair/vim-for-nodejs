@@ -1,6 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
+"
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -16,9 +16,9 @@ Plugin 'VundleVim/Vundle.vim'
 "original repos on github
 "
 "Bundle 'kien/ctrlp.vim'
+Bundle 'dracula/vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
-Bundle 'dracula/vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-airline/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
@@ -27,6 +27,11 @@ Bundle 'moll/vim-node'
 Bundle 'pangloss/vim-javascript'
 Bundle 'walm/jshint.vim'
 Bundle 'Shutnik/jshint2.vim'
+"Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Raimondi/delimitMate'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'jelera/vim-javascript-syntax'
+
 ">>>>>>>>>>>>>>>>>>>>>>>>
 "vimscripts repos
 "
@@ -59,8 +64,11 @@ filetype plugin indent on    " required
 " Config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
+filetype on
+filetype plugin on
+"
 " 语法高亮
-" syntax enable
+syntax enable
 syntax on
 "
 "行号
@@ -83,11 +91,8 @@ set ts=2
 set sw=2
 set smartindent
 "
-" 括号自动补全
-inoremap ( ()<LEFT>
-inoremap [ []<LEFT>
-inoremap { {<ENTER><TAB><ENTER>}<UP>
-"
+" 函数回车缩进
+inoremap { {<RETURN><TAB><RETURN>}<UP><TAB>
 " 输入一个字符时，如果下一个字符也是括号，则删除它，避免出现重复字符
 function! RemoveNextDoubleChar(char)
 	let l:line = getline(".")
@@ -102,7 +107,8 @@ inoremap ) <ESC>:call RemoveNextDoubleChar(')')<CR>a
 inoremap ] <ESC>:call RemoveNextDoubleChar(']')<CR>a
 inoremap } <ESC>:call RemoveNextDoubleChar('}')<CR>a
 "
-"
+" 代码折叠
+set foldmethod=marker
 "
 " ........ NERDTree ........
 " 使用F2快速调用和隐藏
@@ -129,6 +135,9 @@ let g:ctrlp_cmd = 'CtrlP'
 "
 " ...... vim-javascript ......
 let javascript_enable_domhtmlcss = 1
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
 "
 "
 " ...... jshint2.vim ......
@@ -139,5 +148,11 @@ let jshint2_close = 0
 let jshint2_confirm = 0
 "
 "
+" ...... vim-indent-guides ......
+"let g:indent_guides_start_level =2
 "
-
+" ...... rainbow_parentheses.vim ...
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
