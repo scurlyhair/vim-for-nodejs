@@ -29,8 +29,9 @@ Bundle 'walm/jshint.vim'
 Bundle 'Shutnik/jshint2.vim'
 "Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Raimondi/delimitMate'
-Bundle 'kien/rainbow_parentheses.vim'
+"Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'luochen1990/rainbow'
 
 ">>>>>>>>>>>>>>>>>>>>>>>>
 "vimscripts repos
@@ -92,7 +93,7 @@ set sw=2
 set smartindent
 "
 " 函数回车缩进
-inoremap { {<RETURN><TAB><RETURN>}<UP><TAB>
+inoremap { {<RETURN><RETURN>}<UP><TAB>
 " 输入一个字符时，如果下一个字符也是括号，则删除它，避免出现重复字符
 function! RemoveNextDoubleChar(char)
 	let l:line = getline(".")
@@ -151,8 +152,11 @@ let jshint2_confirm = 0
 " ...... vim-indent-guides ......
 "let g:indent_guides_start_level =2
 "
-" ...... rainbow_parentheses.vim ...
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" ...... rainbow ......
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+"
+"
+"
+"
+"
+"
