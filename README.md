@@ -525,6 +525,8 @@ $ npm install --save PACKAGE_NAME
 - [utility](https://github.com/node-modules/utility): A collection of useful utilities.
 - [superagent](https://github.com/visionmedia/superagent): A small progressive client-side HTTP request library, and Node.js module with the same API, sporting many high-level HTTP client features.
 - [cheerio](https://github.com/cheeriojs/cheerio):Fast, flexible, and lean implementation of core jQuery designed specifically for the server. 
+- [node-formidable](https://github.com/felixge/node-formidable)
+A node.js module for parsing form data, especially file uploads.
 
 
 ## Errors

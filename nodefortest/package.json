@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.14.0",
+    "formidable": "^1.0.17",
     "jshint": "^2.9.3",
     "tern": "^0.20.0"
   },
