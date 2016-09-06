@@ -194,7 +194,7 @@ Better Rainbow Parentheses.
 
 
 **---Colorschemes---**
-#####2.2.10 [altercation](https://github.com/altercation/vim-colors-solarized)
+#####2.2.10 [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 precision colorscheme for the vim text editor
 #####2.2.11 [dracula](https://draculatheme.com/vim/)
 wonderful theme for everything. By the way: 这个系列的主题，真TM不错。每次打开Vim心情瞬间美美哒！O(∩_∩)O哈哈~ 虽然据说是暗黑系风格。 You like it?

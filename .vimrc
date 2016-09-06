@@ -1,5 +1,7 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype on                  " required
+
+"
 "
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -16,7 +18,8 @@ Plugin 'VundleVim/Vundle.vim'
 "original repos on github
 "
 "Bundle 'kien/ctrlp.vim'
-Bundle 'dracula/vim'
+"Bundle 'dracula/vim'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
@@ -128,7 +131,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 "
 " ...... dracula ......
-color dracula
+"color dracula
 "
 " ...... ctrlp ......
 let g:ctrlp_map = '<c-p>'
@@ -143,7 +146,7 @@ let g:javascript_plugin_flow = 1
 "
 " ...... jshint2.vim ......
 let jshint2_command = '/usr/local/lib/node_modules/.bin/jshint'
-let jshint2_read = 1
+"let jshint2_read = 1
 let jshint2_save = 1
 let jshint2_close = 0
 let jshint2_confirm = 0
@@ -156,7 +159,10 @@ let jshint2_confirm = 0
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 "
 "
-"
+" ...... vim-color-solarized ......
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
 "
 "
 "
