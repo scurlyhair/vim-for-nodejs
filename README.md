@@ -491,7 +491,8 @@ gt      后一个 tab
 一些常用操作：
 
 ```
-gg=G //format your code
+gg=G //Format 代码
+"+p //粘贴寄存器文本（保证外部拷贝的代码粘贴进来不会产生缩进混乱）
 ```
 
 ## Atom
