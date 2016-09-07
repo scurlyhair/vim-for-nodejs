@@ -527,6 +527,8 @@ $ npm install --save PACKAGE_NAME
 - [cheerio](https://github.com/cheeriojs/cheerio):Fast, flexible, and lean implementation of core jQuery designed specifically for the server. 
 - [node-formidable](https://github.com/felixge/node-formidable)
 A node.js module for parsing form data, especially file uploads.
+- [MongoDB](http://mongodb.org/)
+DabaBase Plugin with Mysql.
 
 
 ## Errors
@@ -546,3 +548,11 @@ node    3742 wuyunhui   12u  IPv6 0xe120a4e962ac90b5      0t0  TCP *:hbci (LISTE
 
 Generally, you should use kill -15 before kill -9 to give the target process a chance to clean up after itself. (Processes can't catch or ignore SIGKILL, but they can and often do catch SIGTERM.) If you don't give the process a chance to finish what it's doing and clean up, it may leave corrupted files (or other state) around that it won't be able to understand once restarted.
 [Nobita的回答](http://stackoverflow.com/questions/9898372/nodejs-error-listen-eaddrinuse)
+
+## Articles
+- [THE DEAD-SIMPLE STEP-BY-STEP GUIDE FOR FRONT-END DEVELOPERS TO GETTING UP AND RUNNING WITH NODE.JS, EXPRESS, JADE, AND MONGODB](http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/)
+by: *Christopher Buecheler*
+- [CREATING A SIMPLE RESTFUL WEB APP WITH NODE.JS, EXPRESS, AND MONGODB](http://cwbuecheler.com/web/tutorials/2014/restful-web-app-node-express-mongodb/)
+by: *Christopher Buecheler*
+- [The Node Beginner Book](http://www.nodebeginner.org/)
+by: *Manuel Kiessling*

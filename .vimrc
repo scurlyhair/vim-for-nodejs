@@ -35,7 +35,7 @@ Bundle 'Raimondi/delimitMate'
 "Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'luochen1990/rainbow'
-
+Bundle 'digitaltoad/vim-pug'
 ">>>>>>>>>>>>>>>>>>>>>>>>
 "vimscripts repos
 "
@@ -146,7 +146,7 @@ let g:javascript_plugin_flow = 1
 "
 " ...... jshint2.vim ......
 let jshint2_command = '/usr/local/lib/node_modules/.bin/jshint'
-"let jshint2_read = 1
+let jshint2_read = 1
 let jshint2_save = 1
 let jshint2_close = 0
 let jshint2_confirm = 0
@@ -163,6 +163,7 @@ let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+
 "
 "
 "

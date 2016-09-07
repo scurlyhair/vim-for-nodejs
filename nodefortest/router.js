@@ -9,5 +9,4 @@ function route(handle, pathname, response, request) {
     response.end();
   }
 }
-
 exports.route = route;
