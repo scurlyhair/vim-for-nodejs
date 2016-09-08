@@ -266,13 +266,8 @@ Pug – robust, elegant, feature rich template engine for Node.js.
 - [cheerio](https://github.com/cheeriojs/cheerio):Fast, flexible, and lean implementation of core jQuery designed specifically for the server. 
 - [node-formidable](https://github.com/felixge/node-formidable)
 A node.js module for parsing form data, especially file uploads.
-- [MongoDB](http://mongodb.org/)
-DabaBase Plugin with Mysql.
-	- install: `brew install mongodb`
-	- create and start database: `mongod --dbpath {project db path}`
-	- start server.
-	- You can also do some operations with mongo console by starting  mongo console and connect the database: `mongo`
-
+- [mongoose](https://github.com/Automattic/mongoose)
+MongoDB object modeling designed to work in an asynchronous environment.
 
 
 ## Errors
@@ -303,6 +298,18 @@ by: *Manuel Kiessling*
 
 
 ## 附：
+### Amazing
+[MongoDB](http://mongodb.org/)
+
+MongoDB is an open source database that uses a document-oriented data model.
+
+- install: `brew install mongodb`
+- create and start database: `mongod --dbpath {project db path}`
+- start server.
+- You can also do some operations with mongo console by starting  mongo console and connect the database: `mongo`
+
+
+
 ### vim常用命令
 #### 基本操作
 
@@ -452,7 +459,9 @@ by: *Manuel Kiessling*
 
 书签功能 
 
-  在文章某处marks ，然后跑到其他地方去了，这是呼叫mark 又回到了原处1. mx x为26个小写字母，表示光标这被mark了2.`x 回到x标志的位置3. 'x 回到x标志的行首
+  在文章某处marks ，然后跑到其他地方去了，这是呼叫mark 又回到了原处
+  1. mx x为26个小写字母，表示光标这被mark了
+  2.`x 回到x标志的位置3. 'x 回到x标志的行首
 
  
 
