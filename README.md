@@ -181,6 +181,17 @@ And [this issue](https://github.com/Valloric/YouCompleteMe/issues/549) can fix i
 cd ~/.vim/bundle/tern_for_vim/
 npm install tern
 ```
+#####2.2.7 [vim-pug](https://github.com/digitaltoad/vim-pug)
+Vim Pug (formerly Jade) template engine syntax highlighting and indention.
+
+**issue**
+If you use `vundle` to manager the plugin, you may meet the trouble that it dosen't work though you have install `vim-pug`.
+To fix it you should do these things below in your `.vimrc`:
+
+1. disable the filetype before vundle with `filetype off`;
+2. enable the filetype below this line `call vundle#end()` with `filetype on`
+You'd better have a look at [this issue](https://github.com/digitaltoad/vim-pug/issues/60).
+
 #####2.2.7 [flow](https://github.com/facebook/flow)
 Adds static typing to JavaScript to improve developer productivity and code quality. 
 
@@ -189,6 +200,7 @@ A Vim plugin for visually displaying indent levels in code.
 
 #####2.2.9 [delimitMate](https://github.com/Raimondi/delimitMate)
 Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc. 
+
 #####2.2.10 [rainbow_parentheeses.vim](https://github.com/kien/rainbow_parentheses.vim)
 Better Rainbow Parentheses.
 
@@ -196,8 +208,10 @@ Better Rainbow Parentheses.
 **---Colorschemes---**
 #####2.2.10 [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 precision colorscheme for the vim text editor
+
 #####2.2.11 [dracula](https://draculatheme.com/vim/)
 wonderful theme for everything. By the way: 这个系列的主题，真TM不错。每次打开Vim心情瞬间美美哒！O(∩_∩)O哈哈~ 虽然据说是暗黑系风格。 You like it?
+
 #####2.2.12 [vim-airline](https://github.com/vim-airline/vim-airline)
 lean & mean status/tabline for vim that's light as air.
 
@@ -218,8 +232,79 @@ The `~/.vimrc` profile control almost everything of vim, so you need to pay some
 You can see my `.vimrc` as a sample [here](.vimrc). For I am a very very newer!
 
 
-### 4.附：常用命令
-基本操作
+## Atom
+### 插件
+安装方法：
+
+- 命令行`apm install ***`
+- atom prefrence -> Settings -> Install
+
+插件：
+
+- atom-ternjs: 自动补全
+- script: 一键运行
+
+### 步骤
+1.安装node
+
+2.新建项目
+
+```
+$ mkdir myapp//新建文件夹
+$ cd myapp//进入文件夹
+$ npm init//工程初始化
+$ npm install --save PACKAGE_NAME
+```
+
+## Libraries
+- [npm](https://github.com/npm/npm): A package manager for javascript.
+- [pug](https://github.com/pugjs/pug)
+Pug – robust, elegant, feature rich template engine for Node.js.
+- [express](https://github.com/expressjs/express): Fast, unopinionated, minimalist web framework for node.
+- [utility](https://github.com/node-modules/utility): A collection of useful utilities.
+- [superagent](https://github.com/visionmedia/superagent): A small progressive client-side HTTP request library, and Node.js module with the same API, sporting many high-level HTTP client features.
+- [cheerio](https://github.com/cheeriojs/cheerio):Fast, flexible, and lean implementation of core jQuery designed specifically for the server. 
+- [node-formidable](https://github.com/felixge/node-formidable)
+A node.js module for parsing form data, especially file uploads.
+- [MongoDB](http://mongodb.org/)
+DabaBase Plugin with Mysql.
+	- install: `brew install mongodb`
+	- create and start database: `mongod --dbpath {project db path}`
+	- start server.
+	- You can also do some operations with mongo console by starting  mongo console and connect the database: `mongo`
+
+
+
+## Errors
+#### 1.`Error: listen EADDRINUSE`：
+`listen()`方法尝试绑定已经被使用的服务器端口。
+
+**解决方案**：终端输入`lsof -i tcp:8888`(8888为端口号)获取在该端口运行的进程id（PID）。输出:
+
+```
+COMMAND  PID     USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+node    3742 wuyunhui   12u  IPv6 0xe120a4e962ac90b5      0t0  TCP *:hbci (LISTEN)
+```
+然后杀死该进程：
+`kill -9 3742`
+
+根据stackoverflow上面的答案最好是在`kill -9`之前先run: `kill -15`，the reason is：
+
+Generally, you should use kill -15 before kill -9 to give the target process a chance to clean up after itself. (Processes can't catch or ignore SIGKILL, but they can and often do catch SIGTERM.) If you don't give the process a chance to finish what it's doing and clean up, it may leave corrupted files (or other state) around that it won't be able to understand once restarted.
+[Nobita的回答](http://stackoverflow.com/questions/9898372/nodejs-error-listen-eaddrinuse)
+
+## Articles
+- [THE DEAD-SIMPLE STEP-BY-STEP GUIDE FOR FRONT-END DEVELOPERS TO GETTING UP AND RUNNING WITH NODE.JS, EXPRESS, JADE, AND MONGODB](http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/)
+by: *Christopher Buecheler*
+- [CREATING A SIMPLE RESTFUL WEB APP WITH NODE.JS, EXPRESS, AND MONGODB](http://cwbuecheler.com/web/tutorials/2014/restful-web-app-node-express-mongodb/)
+by: *Christopher Buecheler*
+- [The Node Beginner Book](http://www.nodebeginner.org/)
+by: *Manuel Kiessling*
+
+
+## 附：
+### vim常用命令
+#### 基本操作
 
 
 ```
@@ -425,7 +510,7 @@ You can see my `.vimrc` as a sample [here](.vimrc). For I am a very very newer!
 ```
 
 
-NERDTree 操作:
+#### NERDTree 操作:
 
 
 ```
@@ -488,71 +573,9 @@ gT      前一个 tab
 gt      后一个 tab
 ```
 
-一些常用操作：
+#### 一些常用操作：
 
 ```
 gg=G //Format 代码
 "+p //粘贴寄存器文本（保证外部拷贝的代码粘贴进来不会产生缩进混乱）
 ```
-
-## Atom
-### 插件
-安装方法：
-
-- 命令行`apm install ***`
-- atom prefrence -> Settings -> Install
-
-插件：
-
-- atom-ternjs: 自动补全
-- script: 一键运行
-
-### 步骤
-1.安装node
-
-2.新建项目
-
-```
-$ mkdir myapp//新建文件夹
-$ cd myapp//进入文件夹
-$ npm init//工程初始化
-$ npm install --save PACKAGE_NAME
-```
-
-## Libraries
-- [npm](https://github.com/npm/npm): A package manager for javascript.
-- [express](https://github.com/expressjs/express): Fast, unopinionated, minimalist web framework for node.
-- [utility](https://github.com/node-modules/utility): A collection of useful utilities.
-- [superagent](https://github.com/visionmedia/superagent): A small progressive client-side HTTP request library, and Node.js module with the same API, sporting many high-level HTTP client features.
-- [cheerio](https://github.com/cheeriojs/cheerio):Fast, flexible, and lean implementation of core jQuery designed specifically for the server. 
-- [node-formidable](https://github.com/felixge/node-formidable)
-A node.js module for parsing form data, especially file uploads.
-- [MongoDB](http://mongodb.org/)
-DabaBase Plugin with Mysql.
-
-
-## Errors
-#### 1.`Error: listen EADDRINUSE`：
-`listen()`方法尝试绑定已经被使用的服务器端口。
-
-**解决方案**：终端输入`lsof -i tcp:8888`(8888为端口号)获取在该端口运行的进程id（PID）。输出:
-
-```
-COMMAND  PID     USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-node    3742 wuyunhui   12u  IPv6 0xe120a4e962ac90b5      0t0  TCP *:hbci (LISTEN)
-```
-然后杀死该进程：
-`kill -9 3742`
-
-根据stackoverflow上面的答案最好是在`kill -9`之前先run: `kill -15`，the reason is：
-
-Generally, you should use kill -15 before kill -9 to give the target process a chance to clean up after itself. (Processes can't catch or ignore SIGKILL, but they can and often do catch SIGTERM.) If you don't give the process a chance to finish what it's doing and clean up, it may leave corrupted files (or other state) around that it won't be able to understand once restarted.
-[Nobita的回答](http://stackoverflow.com/questions/9898372/nodejs-error-listen-eaddrinuse)
-
-## Articles
-- [THE DEAD-SIMPLE STEP-BY-STEP GUIDE FOR FRONT-END DEVELOPERS TO GETTING UP AND RUNNING WITH NODE.JS, EXPRESS, JADE, AND MONGODB](http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/)
-by: *Christopher Buecheler*
-- [CREATING A SIMPLE RESTFUL WEB APP WITH NODE.JS, EXPRESS, AND MONGODB](http://cwbuecheler.com/web/tutorials/2014/restful-web-app-node-express-mongodb/)
-by: *Christopher Buecheler*
-- [The Node Beginner Book](http://www.nodebeginner.org/)
-by: *Manuel Kiessling*

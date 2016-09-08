@@ -1,0 +1,8 @@
+{
+    "libs": [
+            "express"
+						],
+        "plugins": {
+          "node": {}
+        }
+}
