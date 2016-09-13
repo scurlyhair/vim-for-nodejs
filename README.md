@@ -288,6 +288,12 @@ node    3742 wuyunhui   12u  IPv6 0xe120a4e962ac90b5      0t0  TCP *:hbci (LISTE
 Generally, you should use kill -15 before kill -9 to give the target process a chance to clean up after itself. (Processes can't catch or ignore SIGKILL, but they can and often do catch SIGTERM.) If you don't give the process a chance to finish what it's doing and clean up, it may leave corrupted files (or other state) around that it won't be able to understand once restarted.
 [Nobita的回答](http://stackoverflow.com/questions/9898372/nodejs-error-listen-eaddrinuse)
 
+#### 2.`Error: Failed to lookup view "error" in views directory`
+There could be some troubles when using `pug` with `express` for `jade` had been renamed to `pug`.
+
+You have to change the name past such as `error.jade` to `error.pug`,
+so that the `pug` can work well.
+
 ## Articles
 - [THE DEAD-SIMPLE STEP-BY-STEP GUIDE FOR FRONT-END DEVELOPERS TO GETTING UP AND RUNNING WITH NODE.JS, EXPRESS, JADE, AND MONGODB](http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/)
 by: *Christopher Buecheler*
