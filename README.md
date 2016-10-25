@@ -1,5 +1,4 @@
 #Note-for-node-js
-（node.js菜鸟学习笔记，持续更新......后期添加索引）
 
 ## Vim
 Make Vim a node.js IDE step by step.(将Vim打造为轻便好用的node.js开发环境)。
