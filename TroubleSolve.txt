@@ -1,0 +1,3 @@
+###########react-native init failed######################
+Sometimes it comes from the watchman trouble 
+fix it with:'rm -rf /usr/local/var/run/watchman/ && brew uninstall watchman && brew install watchman'
