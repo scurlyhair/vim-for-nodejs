@@ -223,37 +223,12 @@ A tree explorer plugin for vim.
 Fuzzy file, buffer, mru, tag, etc finder.
 
 
-
 ### 3. Config
 
 The `~/.vimrc` profile control almost everything of vim, so you need to pay some of your time to know about it.
 
 You can see my `.vimrc` as a sample [here](.vimrc). For I am a very very newer!
 
-
-## Atom
-### 插件
-安装方法：
-
-- 命令行`apm install ***`
-- atom prefrence -> Settings -> Install
-
-插件：
-
-- atom-ternjs: 自动补全
-- script: 一键运行
-
-### 步骤
-1.安装node
-
-2.新建项目
-
-```
-$ mkdir myapp//新建文件夹
-$ cd myapp//进入文件夹
-$ npm init//工程初始化
-$ npm install --save PACKAGE_NAME
-```
 
 ## Libraries
 - [npm](https://github.com/npm/npm): A package manager for javascript.
@@ -282,7 +257,7 @@ node    3742 wuyunhui   12u  IPv6 0xe120a4e962ac90b5      0t0  TCP *:hbci (LISTE
 然后杀死该进程：
 `kill -9 3742`
 
-根据stackoverflow上面的答案最好是在`kill -9`之前先run: `kill -15`，the reason is：
+根据stackoverflow上面的答案最好是在`kill -9`之前: `kill -15`，the reason is：
 
 Generally, you should use kill -15 before kill -9 to give the target process a chance to clean up after itself. (Processes can't catch or ignore SIGKILL, but they can and often do catch SIGTERM.) If you don't give the process a chance to finish what it's doing and clean up, it may leave corrupted files (or other state) around that it won't be able to understand once restarted.
 [Nobita的回答](http://stackoverflow.com/questions/9898372/nodejs-error-listen-eaddrinuse)
